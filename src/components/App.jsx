@@ -1,16 +1,22 @@
-export const App = () => {
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Box } from '@mui/material';
+import './App.module.css';
+import ExerciseDetail from 'pages/ExerciseDetail';
+import Home from '../pages/Home';
+import Navbar from '../components/Navbar/Navbar';
+import Footer from './Footer/Footer';
+
+const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Box width="400px">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/exercise/:id" element={<ExerciseDetail />} />
+      </Routes>
+      <Footer />
+    </Box>
   );
 };
+export default App;
