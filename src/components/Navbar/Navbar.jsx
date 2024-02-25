@@ -47,3 +47,7 @@ const Navbar = () => (
 );
 
 export default Navbar;
+//stack e mai eficient decat div pentru ca adauga functionalitati suplimentare ,precum gestionarea spatiului
+//intre eleme ,aliniere si ajutarea automata a dimens
+//xs pentru dispozitivele mai mici ajusteaza dimens
+//sx pt dimen mai mari

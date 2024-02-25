@@ -20,6 +20,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
     fetchExercisesData();
   }, []);
+  //cand apasam butonul search
 
   const handleSearch = async () => {
     if (search) {
@@ -27,7 +28,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         'https://exercisedb.p.rapidapi.com/exercises',
         exerciseOptions
       );
-
+      //filtreaza exercitiile in functie de textlu introdus
       const searchedExercises = exercisesData.filter(
         item =>
           item.name.toLowerCase().includes(search) ||
@@ -37,12 +38,12 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       );
 
       window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
-
+      //reseteaza
       setSearch('');
       setExercises(searchedExercises);
     }
   };
-
+  //inform despre exercitii
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
       <Typography
@@ -97,3 +98,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 };
 
 export default SearchExercises;
+
+//setExercises: Această funcție este utilizată pentru a seta exercițiile în componenta părinte.
+// Atunci când se face o căutare și sunt găsite exerciții potrivite, acestea sunt transmise
+//către componenta părinte utilizând această funcție pentru a le actualiza.
