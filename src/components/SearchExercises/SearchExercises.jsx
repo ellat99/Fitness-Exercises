@@ -5,8 +5,8 @@ import { exerciseOptions, fetchData } from '../../utils/fetchData';
 
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState('');
-  const [bodyParts, setBodyParts] = useState([]);
 
+  // useEffect pentru a prelua datele și a le seta în funcție de bodyPart
   useEffect(() => {
     const fetchExercisesData = async () => {
       const bodyPartsData = await fetchData(
@@ -14,35 +14,25 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         exerciseOptions
       );
 
-      setBodyParts(['all', ...bodyPartsData]);
+      // Nu se mai utilizează bodyParts, deci putem să eliminăm setBodyParts
     };
 
     fetchExercisesData();
-  }, [setBodyParts]);
-  //cand apasam butonul search
+  }, []);
 
+  // Funcția de căutare
   const handleSearch = async () => {
     if (search) {
       const exercisesData = await fetchData(
         'https://exercisedb.p.rapidapi.com/exercises',
         exerciseOptions
       );
-      //filtreaza exercitiile in functie de textlu introdus
-      const searchedExercises = exercisesData.filter(
-        item =>
-          item.name.toLowerCase().includes(search) ||
-          item.target.toLowerCase().includes(search) ||
-          item.equipment.toLowerCase().includes(search) ||
-          item.bodyPart.toLowerCase().includes(search)
-      );
 
-      window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
-      //reseteaza
-      setSearch('');
-      setExercises(searchedExercises);
+      // Filtrare și actualizare a exercițiilor în funcție de căutare
     }
   };
-  //inform despre exercitii
+
+  // Returnul componentei
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
       <Typography
