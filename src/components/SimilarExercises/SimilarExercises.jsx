@@ -1,12 +1,12 @@
 import React from 'react';
 import { Typography, Box, Stack } from '@mui/material';
 
-import HorizontalScrollbar from '../HorizontalScrollbar/HorizontalScrollbar';
+// import HorizontalScrollbar from '../HorizontalScrollbar/HorizontalScrollbar';
 import Loader from '../Loader/Loader';
 
 const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => (
   <Box sx={{ mt: { lg: '100px', xs: '0px' } }}>
-    <Typography
+    {/* <Typography
       sx={{ fontSize: { lg: '44px', xs: '25px' }, ml: '20px' }}
       fontWeight={700}
       color="#000"
@@ -17,15 +17,15 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => (
         Target Muscle
       </span>{' '}
       exercises
-    </Typography>
-    <Stack direction="row" sx={{ p: 2, position: 'relative' }}>
+    </Typography> */}
+    {/* <Stack direction="row" sx={{ p: 2, position: 'relative' }}>
       {targetMuscleExercises.length !== 0 ? (
         <HorizontalScrollbar data={targetMuscleExercises} />
       ) : (
         <Loader />
       )}
-    </Stack>
-    <Typography
+    </Stack> */}
+    {/* <Typography
       sx={{
         fontSize: { lg: '44px', xs: '25px' },
         ml: '20px',
@@ -40,14 +40,14 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => (
         Equipment
       </span>{' '}
       exercises
-    </Typography>
-    <Stack direction="row" sx={{ p: 2, position: 'relative' }}>
+    </Typography> */}
+    {/* <Stack direction="row" sx={{ p: 2, position: 'relative' }}>
       {equipmentExercises.length !== 0 ? (
         <HorizontalScrollbar data={equipmentExercises} />
       ) : (
         <Loader />
       )}
-    </Stack>
+    </Stack> */}
   </Box>
 );
 
