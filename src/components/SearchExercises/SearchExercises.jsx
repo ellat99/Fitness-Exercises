@@ -6,32 +6,26 @@ import { exerciseOptions, fetchData } from '../../utils/fetchData';
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState('');
 
-  // useEffect pentru a prelua datele și a le seta în funcție de bodyPart
   useEffect(() => {
     const fetchExercisesData = async () => {
       await fetchData(
         'https://exercisedb.p.rapidapi.com/exercises/bodyPartList',
         exerciseOptions
       );
-      // Nu se mai utilizează bodyPartsData, deci putem să eliminăm atribuirea
     };
 
     fetchExercisesData();
   }, []);
 
-  // Funcția de căutare
   const handleSearch = async () => {
     if (search) {
       const exercisesData = await fetchData(
         'https://exercisedb.p.rapidapi.com/exercises',
         exerciseOptions
       );
-
-      // Filtrare și actualizare a exercițiilor în funcție de căutare
     }
   };
 
-  // Returnul componentei
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
       <Typography
