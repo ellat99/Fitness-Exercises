@@ -9,12 +9,11 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   // useEffect pentru a prelua datele și a le seta în funcție de bodyPart
   useEffect(() => {
     const fetchExercisesData = async () => {
-      const bodyPartsData = await fetchData(
+      await fetchData(
         'https://exercisedb.p.rapidapi.com/exercises/bodyPartList',
         exerciseOptions
       );
-
-      // Nu se mai utilizează bodyParts, deci putem să eliminăm setBodyParts
+      // Nu se mai utilizează bodyPartsData, deci putem să eliminăm atribuirea
     };
 
     fetchExercisesData();
