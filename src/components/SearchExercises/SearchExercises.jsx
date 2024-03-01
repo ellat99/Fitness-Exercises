@@ -5,7 +5,7 @@ import { exerciseOptions, fetchData } from '../../utils/fetchData';
 
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState('');
-  const [setBodyParts] = useState([]);
+  const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
     const fetchExercisesData = async () => {
@@ -18,7 +18,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
     };
 
     fetchExercisesData();
-  }, []);
+  }, [setBodyParts]);
   //cand apasam butonul search
 
   const handleSearch = async () => {
